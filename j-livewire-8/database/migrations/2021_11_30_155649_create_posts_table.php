@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
             //hacer la relacion con la tabal usuarios y categorias
-            $table->foreign('course_id')->references('id')->on('course');
+            $table->foreign('course_id')->references('id')->on('courses');
         });
     }
 

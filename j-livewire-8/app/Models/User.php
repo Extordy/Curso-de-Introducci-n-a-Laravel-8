@@ -58,4 +58,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //configuracion para el avatar (campo virtual)
+    public function getAvatarAttribute()
+    {
+        //estraer avatar  gravatar
+        $email = md5($this->email);
+        return "https://s.gravatar.com/avatar/$email";
+    }
 }
